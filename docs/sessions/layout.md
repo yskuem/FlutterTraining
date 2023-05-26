@@ -11,13 +11,13 @@ GitHubアプリの検索結果画面のレイアウトを構成する
 
 以下の Widget を利用するとさまざまな画面に対応することができます。
 
-[Row]
-[Column]
-[Flexible]
-[Expanded]
-[AspectRatio]
-[FractionallySizedBox]
-[Flutter Inspector] を利用すると、レイアウト構造を視覚化でき、より開発しやすくなります。  
+[Row]  
+[Column]  
+[Flexible]  
+[Expanded]  
+[AspectRatio]  
+[FractionallySizedBox]  
+[Flutter Inspector] を利用すると、レイアウト構造を視覚化でき、より開発しやすくなります。    
 [UIカタログ](https://docs.flutter.dev/ui/widgets)は、Widget選びに迷ったときに便利です。実際に色々試してみましょう。
 
 <!-- Links -->
