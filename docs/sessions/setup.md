@@ -12,12 +12,6 @@
 - [ ] Flutter の設定（ `fvm flutter doctor` を実行して確認）
 - [ ] Android・iOS でアプリを実行
 
-## 参考資料
-
-- [リポジトリの GitHub Actions の設定を管理する]
-- [保護されたブランチについて]
-- [GitHub + Slack]
-
 <!-- Links -->
 
 [fvm]: https://fvm.app/

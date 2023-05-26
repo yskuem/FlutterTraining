@@ -3,8 +3,8 @@
 GitHubアプリの検索結果画面のレイアウトを構成する
 
 ## 課題
-[Scaffold], [AppBar], [ListView], [ListTile]を用いてリポジトリ一覧を表示ささせる画面を作ります。 
-各アイテムにはリポジトリの名前・簡単な説明・スター数を表示します。
+[Scaffold], [AppBar], [ListView], [ListTile]を用いてリポジトリ一覧を表示ささせる画面を作ります。  
+各アイテムにはリポジトリの名前・簡単な説明・スター数を表示します。  
 今はレイアウトだけ組むことが目的なので、[PlaceHolder]を使ってダミーを表示させるか、適当な文字列を表示させてください。
 
 ## 参考
@@ -17,7 +17,7 @@ GitHubアプリの検索結果画面のレイアウトを構成する
 [Expanded]
 [AspectRatio]
 [FractionallySizedBox]
-[Flutter Inspector] を利用すると、レイアウト構造を視覚化でき、より開発しやすくなります。
+[Flutter Inspector] を利用すると、レイアウト構造を視覚化でき、より開発しやすくなります。  
 [UIカタログ](https://docs.flutter.dev/ui/widgets)は、Widget選びに迷ったときに便利です。実際に色々試してみましょう。
 
 <!-- Links -->
