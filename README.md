@@ -1,16 +1,10 @@
-# flutter_training
+# Flutterトレーニング
+実務に近いかたちでアプリ開発を行いながら、Flutter でのアプリ開発の基礎復習、実務スキルを身に付けるための研修です。
+Githubリポジトリの一覧を表示するアプリを作っていただきます。
 
-A new Flutter project.
+# 研修の流れ
+このリポジトリをフォークして研修用のリポジトリを作成し、以下の課題に取り組んでください。
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. SetUp
+2. Layout
+3. Api
