@@ -6,6 +6,6 @@ Githubリポジトリの一覧を表示するアプリを作っていただき�
 このリポジトリをフォークして研修用のリポジトリを作成し、以下の課題に取り組んでください。
 課題ごとにPRを作成し、マージされたら次の課題に取り組みましょう。
 
-1. SetUp
-2. Layout
-3. Api
+1. [SetUp](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/setup.md)
+2. [Layout](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/layout.md)
+3. [Api](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/api.md)
