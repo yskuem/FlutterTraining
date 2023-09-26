@@ -9,4 +9,5 @@ Githubリポジトリの一覧を表示するアプリを作っていただき�
 1. [SetUp](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/setup.md)
 2. [Layout](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/layout.md)
 3. [Api](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/api.md)
-
+4. [Design](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/design.md)
+5. [Error Handle](https://github.com/HiroyukiTamura/FlutterTraining/blob/master/docs/sessions/error_handle.md)
