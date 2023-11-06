@@ -5,12 +5,12 @@
 ## 課題
 
 - [x] 作成した研修用のリポジトリにメンターを招待して、リポジトリへの書き込みアクセス権を付与
-- [] .gitignoreファイルを作成
+- [x] .gitignoreファイルを作成
 - [x] [fvm] をインストール
 - [x] プロジェクトルートで `fvm install` コマンドを実行して最新安定版の Flutter SDK をインストール
 - [x] IDE の最新安定板をインストール
 - [x] Flutter の設定（ `fvm flutter doctor` を実行して確認）
-- [ ] Android・iOS でアプリを実行
+- [x] Android・iOS でアプリを実行
 
 <!-- Links -->
 
