@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/ui/pages/repository_search_page.dart';
+import 'package:flutter_training/ui/pages/search_result_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
