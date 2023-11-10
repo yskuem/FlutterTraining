@@ -1,38 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_training/core/entities/repository.dart';
+import 'package:flutter_training/core/services/api_services.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../parts/repository_cardlist.dart';
 
-class RepositorySearchPage extends StatelessWidget {
+
+final repositoryProvider = FutureProvider<List<Repository>>((ref) async {
+  return await ApiService().fetchRepository();
+});
+
+
+
+class RepositorySearchPage extends HookConsumerWidget {
   const RepositorySearchPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+
+    final repositoryListData = ref.watch(repositoryProvider);
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("repositories"),
-        ),
-        body: ListView.builder(
-          itemCount: 3,
-          itemBuilder: (BuildContext context, int index) {
-            return const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Card(
-                elevation: 4.0,
-                child: Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: ListTile(
-                    title: Text(
-                      "flutter",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text(
-                      "Flutter makes it easy and fast to build beautiful apps for mobile and beyond"
-                    ),
-                    trailing: Text("1000 Stars"),
-                  ),
-                ),
-              ),
-            );
-          },
-        )
+      body: repositoryListData.when(
+        data: (repositoryList){
+          return RepositoryCardList(
+            repositoryList: repositoryList,
+          );
+        },
+        error: (error, stack) => Text('Error: $error'),
+        loading: () => const Center(child: CircularProgressIndicator()),
+      ),
     );
   }
 }
