@@ -14,11 +14,11 @@ class RepositoryCardList extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         final repository = repositoryList[index];
         return Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10),
           child: Card(
-            elevation: 4.0,
+            elevation: 4,
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10),
               child: ListTile(
                 title: Text(
                   repository.name,

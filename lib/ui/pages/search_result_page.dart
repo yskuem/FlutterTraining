@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/core/entities/repository.dart';
-import 'package:flutter_training/core/services/api_services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../core/infrastructure/github_api_client.dart';
 import '../parts/repository_cardlist.dart';
 
 
 final repositoryProvider = FutureProvider<List<Repository>>((ref) async {
-  return await ApiService().fetchRepository();
+  return await GithubApiClient().fetchRepository();
 });
 
 
 
-class RepositorySearchPage extends HookConsumerWidget {
-  const RepositorySearchPage({super.key});
+class SearchResultPage extends HookConsumerWidget {
+  const SearchResultPage({super.key});
+
 
   @override
   Widget build(BuildContext context,WidgetRef ref) {
