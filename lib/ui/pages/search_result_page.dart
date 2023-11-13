@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class RepositorySearchPage extends StatelessWidget {
-  const RepositorySearchPage({super.key});
+class SearchResultPage extends StatelessWidget {
+  const SearchResultPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +14,11 @@ class RepositorySearchPage extends StatelessWidget {
           itemCount: 3,
           itemBuilder: (BuildContext context, int index) {
             return const Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10),
               child: Card(
-                elevation: 4.0,
+                elevation: 4,
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10),
                   child: ListTile(
                     title: Text(
                       "flutter",
