@@ -1,39 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_training/core/entities/repository.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../core/infrastructure/github_api_client.dart';
+import '../parts/repository_cardlist.dart';
 
-class SearchResultPage extends StatelessWidget {
+
+final repositoryProvider = FutureProvider<List<Repository>>((ref) async {
+  return await GithubApiClient().fetchRepository();
+});
+
+
+
+class SearchResultPage extends HookConsumerWidget {
   const SearchResultPage({super.key});
 
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+
+    final repositoryListData = ref.watch(repositoryProvider);
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("repositories"),
-        ),
-        body: ListView.builder(
-          itemCount: 3,
-          itemBuilder: (BuildContext context, int index) {
-            return const Padding(
-              padding: EdgeInsets.all(10),
-              child: Card(
-                elevation: 4,
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: ListTile(
-                    title: Text(
-                      "flutter",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text(
-                      "Flutter makes it easy and fast to build beautiful apps for mobile and beyond"
-                    ),
-                    trailing: Text("1000 Stars"),
-                  ),
-                ),
-              ),
-            );
-          },
-        )
+      body: repositoryListData.when(
+        data: (repositoryList){
+          return RepositoryCardList(
+            repositoryList: repositoryList,
+          );
+        },
+        error: (error, stack) => Text('Error: $error'),
+        loading: () => const Center(child: CircularProgressIndicator()),
+      ),
     );
   }
 }
