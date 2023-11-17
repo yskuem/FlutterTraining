@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/ui/pages/search_result_page.dart';
+import 'package:flutter_training/ui/pages/search_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SearchResultPage()
+      home: const SearchPage()
     );
   }
 }
