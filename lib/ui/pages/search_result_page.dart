@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_training/ui/pages/search_page.dart';
 import 'package:flutter_training/ui/parts/repository_cardlist.dart';
+import 'package:flutter_training/ui/parts/show_alert.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 
@@ -39,7 +40,7 @@ class SearchResultPage extends HookConsumerWidget {
             return RepositoryCardList(repositoryList: data);
           },
           error: (error){
-            print(error);
+            return ShowAlert(errorMessage: error.toString());
           },
           loading: () {
             return const Center(child: CircularProgressIndicator());
