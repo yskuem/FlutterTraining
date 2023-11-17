@@ -7,11 +7,14 @@ import '../../infrastructure/github_api_client.dart';
 class SearchPageViewModel extends StateNotifier<SearchPageModel>{
   SearchPageViewModel(super.state);
 
+
   void initializeResult() {
     state = state.copyWith(
       fetchRepositoryResult: const Result.loading(),
     );
   }
+
+
 
   Future<void> fetchRepository (String query) async {
     try{
@@ -25,6 +28,4 @@ class SearchPageViewModel extends StateNotifier<SearchPageModel>{
       );
     }
   }
-
-
 }
