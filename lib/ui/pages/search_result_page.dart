@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_training/core/application/model/search_result_page_model.dart';
-import 'package:flutter_training/core/entities/result.dart';
 import 'package:flutter_training/ui/pages/search_page.dart';
 import 'package:flutter_training/ui/parts/repository_cardlist.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../core/application/view_model/search_result_page_view_model.dart';
 
 
-
-final searchResultPageProvider =
-  StateNotifierProvider<SearchResultPageViewModel,SearchResultPageModel>((ref){
-    return SearchResultPageViewModel(
-      const SearchResultPageModel(
-          fetchRepositoryResult: Result.loading(),
-      )
-    );
-  });
 
 
 class SearchResultPage extends HookConsumerWidget {
@@ -25,12 +13,12 @@ class SearchResultPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
 
-    final state = ref.watch(searchResultPageProvider);
+    final state = ref.watch(searchPageProvider);
 
 
     useEffect(() {//Repository fetch
       final query = ref.read(searchPageProvider).formTextController.text;
-      ref.read(searchResultPageProvider.notifier).fetchRepository(query);
+      ref.read(searchPageProvider.notifier).fetchRepository(query);
       return;
     }, const []);
 
@@ -38,6 +26,13 @@ class SearchResultPage extends HookConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Search Result"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            ref.read(searchPageProvider.notifier).initializeResult();
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body:state.fetchRepositoryResult.when(
           success: (data){

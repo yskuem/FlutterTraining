@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SearchPageModel {
   TextEditingController get formTextController =>
       throw _privateConstructorUsedError;
+  Result<List<Repository>> get fetchRepositoryResult =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchPageModelCopyWith<SearchPageModel> get copyWith =>
@@ -30,7 +32,11 @@ abstract class $SearchPageModelCopyWith<$Res> {
           SearchPageModel value, $Res Function(SearchPageModel) then) =
       _$SearchPageModelCopyWithImpl<$Res, SearchPageModel>;
   @useResult
-  $Res call({TextEditingController formTextController});
+  $Res call(
+      {TextEditingController formTextController,
+      Result<List<Repository>> fetchRepositoryResult});
+
+  $ResultCopyWith<List<Repository>, $Res> get fetchRepositoryResult;
 }
 
 /// @nodoc
@@ -47,13 +53,27 @@ class _$SearchPageModelCopyWithImpl<$Res, $Val extends SearchPageModel>
   @override
   $Res call({
     Object? formTextController = null,
+    Object? fetchRepositoryResult = null,
   }) {
     return _then(_value.copyWith(
       formTextController: null == formTextController
           ? _value.formTextController
           : formTextController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
+      fetchRepositoryResult: null == fetchRepositoryResult
+          ? _value.fetchRepositoryResult
+          : fetchRepositoryResult // ignore: cast_nullable_to_non_nullable
+              as Result<List<Repository>>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultCopyWith<List<Repository>, $Res> get fetchRepositoryResult {
+    return $ResultCopyWith<List<Repository>, $Res>(_value.fetchRepositoryResult,
+        (value) {
+      return _then(_value.copyWith(fetchRepositoryResult: value) as $Val);
+    });
   }
 }
 
@@ -65,7 +85,12 @@ abstract class _$$SearchPageModelImplCopyWith<$Res>
       __$$SearchPageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({TextEditingController formTextController});
+  $Res call(
+      {TextEditingController formTextController,
+      Result<List<Repository>> fetchRepositoryResult});
+
+  @override
+  $ResultCopyWith<List<Repository>, $Res> get fetchRepositoryResult;
 }
 
 /// @nodoc
@@ -80,12 +105,17 @@ class __$$SearchPageModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? formTextController = null,
+    Object? fetchRepositoryResult = null,
   }) {
     return _then(_$SearchPageModelImpl(
       formTextController: null == formTextController
           ? _value.formTextController
           : formTextController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
+      fetchRepositoryResult: null == fetchRepositoryResult
+          ? _value.fetchRepositoryResult
+          : fetchRepositoryResult // ignore: cast_nullable_to_non_nullable
+              as Result<List<Repository>>,
     ));
   }
 }
@@ -93,14 +123,17 @@ class __$$SearchPageModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchPageModelImpl implements _SearchPageModel {
-  const _$SearchPageModelImpl({required this.formTextController});
+  const _$SearchPageModelImpl(
+      {required this.formTextController, required this.fetchRepositoryResult});
 
   @override
   final TextEditingController formTextController;
+  @override
+  final Result<List<Repository>> fetchRepositoryResult;
 
   @override
   String toString() {
-    return 'SearchPageModel(formTextController: $formTextController)';
+    return 'SearchPageModel(formTextController: $formTextController, fetchRepositoryResult: $fetchRepositoryResult)';
   }
 
   @override
@@ -109,11 +142,14 @@ class _$SearchPageModelImpl implements _SearchPageModel {
         (other.runtimeType == runtimeType &&
             other is _$SearchPageModelImpl &&
             (identical(other.formTextController, formTextController) ||
-                other.formTextController == formTextController));
+                other.formTextController == formTextController) &&
+            (identical(other.fetchRepositoryResult, fetchRepositoryResult) ||
+                other.fetchRepositoryResult == fetchRepositoryResult));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, formTextController);
+  int get hashCode =>
+      Object.hash(runtimeType, formTextController, fetchRepositoryResult);
 
   @JsonKey(ignore: true)
   @override
@@ -125,11 +161,14 @@ class _$SearchPageModelImpl implements _SearchPageModel {
 
 abstract class _SearchPageModel implements SearchPageModel {
   const factory _SearchPageModel(
-          {required final TextEditingController formTextController}) =
+          {required final TextEditingController formTextController,
+          required final Result<List<Repository>> fetchRepositoryResult}) =
       _$SearchPageModelImpl;
 
   @override
   TextEditingController get formTextController;
+  @override
+  Result<List<Repository>> get fetchRepositoryResult;
   @override
   @JsonKey(ignore: true)
   _$$SearchPageModelImplCopyWith<_$SearchPageModelImpl> get copyWith =>
