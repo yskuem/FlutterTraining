@@ -5,11 +5,10 @@ class GithubApiClient{
 
   final Dio _dio = Dio();
 
-  Future<List<Repository>> fetchRepository () async {
-    final response = await _dio.get('https://api.github.com/search/repositories?q=flutter');
+  Future<List<Repository>> fetchRepository (String query) async {
+    final response = await _dio.get('https://api.github.com/search/repositories?q=$query');
     final List<dynamic> items = response.data["items"];
     final List<Repository> itemList = items.map((data) => Repository.fromJson(data)).toList();
     return itemList;
   }
-
 }
